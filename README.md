@@ -6,7 +6,7 @@ dengan ringkasan keuangan bulanan.
 **Stack:** Node.js + Express (backend) · MySQL (database) · HTML/CSS/JS (frontend, responsif mobile & desktop).
 
 **Memenuhi spesifikasi tugas:**
-- ✅ Integrasi database (MySQL — alternatif PostgreSQL tersedia)
+- ✅ Integrasi database (MySQL)
 - ✅ 2 rumpun CRUD lengkap yang saling berelasi: **Kategori** dan **Transaksi** (`transactions.category_id` → `categories.id`, FOREIGN KEY dengan ON DELETE RESTRICT)
 - ✅ Frontend menarik: dashboard, grafik tren 6 bulan, laporan per kategori, mode mobile (bottom nav) & mode website (sidebar)
 
@@ -20,10 +20,9 @@ dompetku-fullstack/
 ├── package.json
 ├── .env.example                   # Contoh konfigurasi — salin jadi .env
 ├── database/
-│   ├── schema.sql                 # Skema + seed data (MySQL/MariaDB)
-│   └── schema-postgres.sql        # Alternatif skema untuk PostgreSQL
+│   ├── schema.sql                 # Skema + seed data (MySQL)
 └── public/
-    └── index.html                 # Frontend (disajikan otomatis oleh Express)
+    └── index.html                 # Frontend
 ```
 
 ---
