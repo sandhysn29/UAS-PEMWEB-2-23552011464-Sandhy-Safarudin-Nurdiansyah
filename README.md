@@ -54,6 +54,12 @@ PORT=3000
 ```bash
 npm install
 ```
+<img width="1919" height="1027" alt="image" src="https://github.com/user-attachments/assets/e0338401-3f7c-468d-ac9f-d33f945f81ef" />
+<img width="1919" height="1026" alt="image" src="https://github.com/user-attachments/assets/0e934941-187c-40c9-8cd8-9ab9646abee6" />
+<img width="1919" height="1027" alt="image" src="https://github.com/user-attachments/assets/fc650775-3ad7-4db5-ab90-c782e41cf42b" />
+<img width="1919" height="1028" alt="image" src="https://github.com/user-attachments/assets/75160283-ce6a-46b9-ad34-17513df2087b" />
+<img width="1919" height="1025" alt="image" src="https://github.com/user-attachments/assets/c9e29d0f-6cf1-488b-944e-4cc965339578" />
+<img width="1919" height="1027" alt="image" src="https://github.com/user-attachments/assets/80f37f68-7ccd-4f93-923e-045ab261402c" />
 
 ---
 
@@ -92,6 +98,10 @@ Buka **http://localhost:3000** — login dengan email & kata sandi apa saja (dem
 memiliki transaksi **tidak bisa dihapus** (ditolak di API dan di level database
 lewat `ON DELETE RESTRICT`).
 
+<img width="1916" height="1021" alt="image" src="https://github.com/user-attachments/assets/a7beb263-8671-47ea-9071-ae6fc0b136ff" />
+<img width="1919" height="1027" alt="image" src="https://github.com/user-attachments/assets/908d5b23-1b91-4dc6-9cd7-fcb3d4c4adaf" />
+<img width="1903" height="1007" alt="image" src="https://github.com/user-attachments/assets/3e278982-bfe2-49ba-90e9-74886baafff6" />
+
 ---
 
 ## D. Endpoint API
@@ -110,31 +120,19 @@ lewat `ON DELETE RESTRICT`).
 
 ---
 
-## E. Alternatif: PostgreSQL
-
-1. Buat database: `CREATE DATABASE dompetku_db;`
-2. Import: `psql -U postgres -d dompetku_db -f database/schema-postgres.sql`
-3. Ganti driver di backend:
-   - `npm uninstall mysql2 && npm install pg`
-   - Di `server.js`, ganti `mysql.createPool(...)` dengan `new (require('pg').Pool)(...)`,
-     placeholder `?` menjadi `$1, $2, ...`, dan fungsi tanggal `YEAR()/MONTH()/DATE_FORMAT()`
-     menjadi `EXTRACT(YEAR FROM ...)` / `TO_CHAR(..., 'YYYY-MM')`.
-
----
-
 ## F. Masalah umum (troubleshooting)
 
 | Gejala | Solusi |
 |---|---|
 | `ECONNREFUSED` saat buka aplikasi | MySQL belum berjalan — nyalakan lewat XAMPP/Laragon |
 | `ER_ACCESS_DENIED_ERROR` | User/password di `.env` salah |
-| `ER_BAD_DB_ERROR: Unknown database` | `schema.sql` belum diimport (Langkah A.2) |
+| `ER_BAD_DB_ERROR: Unknown database` | `schema.sql` belum diimport |
 | Port 3000 terpakai | Ubah `PORT` di `.env` |
 | Data tidak muncul | Cek terminal server untuk pesan error SQL |
 
 ---
 
-## G. Pengembangan lanjutan (opsional)
+## G. Pengembangan lanjutan
 - Autentikasi sungguhan (tabel `users` + bcrypt + session/JWT) — login saat ini demo di sisi client
 - PWA: tambahkan `manifest.json` + service worker agar bisa di-install ke homescreen
 - Deploy: Railway / Render (backend + MySQL managed), atau VPS + Nginx
